@@ -1,0 +1,10 @@
+{
+  "name": "榜樣 10 題檢核表",
+  "short_name": "榜樣檢核",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F8FB",
+  "theme_color": "#173B57",
+  "lang": "zh-Hant"
+}
