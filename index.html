@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173B57">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="榜樣檢核">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>榜樣 10 題檢核</title>
+<style>
+:root{--navy:#173B57;--bg:#F5F8FB;--card:#fff;--text:#1F2A33;--muted:#6B7884;--line:#DDE5EC;--green:#DFF3E4;--yellow:#FFF3CD;--red:#FDE4E1;--blue:#E9F3FA}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text)}header{position:sticky;top:0;z-index:10;padding:calc(14px + env(safe-area-inset-top)) 18px 14px;background:rgba(245,248,251,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.title{font-size:22px;font-weight:800}.sub{font-size:13px;color:var(--muted);margin-top:4px}main{max-width:760px;margin:auto;padding:16px 14px calc(90px + env(safe-area-inset-bottom))}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 4px 18px rgba(24,56,79,.05);margin-bottom:14px}.quote{font-weight:700;line-height:1.55;background:var(--blue);padding:14px;border-radius:14px}label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bottom:6px}input,select,textarea{width:100%;border:1px solid #C9D4DD;background:#fff;border-radius:12px;padding:12px 13px;font-size:16px;color:var(--text)}textarea{min-height:88px;resize:vertical;line-height:1.5}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:520px){.row{grid-template-columns:1fr}}.qtitle{font-size:17px;font-weight:800;line-height:1.45}.desc{font-size:14px;color:var(--muted);line-height:1.55;margin-top:6px}.example{font-size:13px;line-height:1.55;margin-top:10px;padding:10px 12px;background:#F8FAFC;border-radius:12px}.score{display:flex;gap:8px;margin-top:14px}.score button{flex:1;border:1px solid #C9D4DD;background:white;color:#31424E;padding:10px 0;border-radius:11px;font-size:16px;font-weight:700}.score button.active{background:var(--navy);color:white;border-color:var(--navy)}.scoreHint{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:5px}.result{text-align:center;padding:18px 14px;border-radius:16px;margin-bottom:12px}.result strong{font-size:34px;display:block;margin:6px 0}.good{background:var(--green)}.mid{background:var(--yellow)}.low{background:var(--red)}.badge{display:inline-block;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:800;background:#EEF2F5}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.primary,.secondary{border:0;border-radius:13px;padding:13px 14px;font-size:15px;font-weight:800}.primary{background:var(--navy);color:#fff}.secondary{background:#E8EEF3;color:var(--navy)}.savedItem{border-top:1px solid var(--line);padding:12px 0;display:flex;justify-content:space-between;gap:12px;align-items:center}.savedItem:first-child{border-top:0}.savedMeta{font-size:12px;color:var(--muted);margin-top:4px}.tinyBtn{border:0;background:#EEF3F6;border-radius:10px;padding:8px 10px;font-weight:700;color:var(--navy)}nav{position:fixed;left:0;right:0;bottom:0;z-index:11;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(18px);border-top:1px solid var(--line)}nav .inner{max-width:760px;margin:auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}nav button{border:0;background:transparent;border-radius:12px;padding:10px 4px;color:var(--muted);font-weight:700}nav button.active{background:#EDF4F8;color:var(--navy)}.hidden{display:none!important}.sectionTitle{font-size:18px;font-weight:800;margin:0 0 12px}.tip{font-size:13px;color:var(--muted);line-height:1.6}.pillTitle{font-weight:800;margin:12px 0 6px}
+</style>
+</head>
+<body>
+<header><div class="title">榜樣 10 題檢核</div><div class="sub">父母・教授・主管・朋友・伴侶</div></header>
+<main>
+<section id="tab-check">
+<div class="card"><div class="quote">榜樣不是「我要變成誰」，而是「我要選擇哪些特質成為我自己的一部分」。</div></div>
+<div class="card"><div class="row"><div><label>姓名／代稱</label><input id="personName" placeholder="例如：某教授"></div><div><label>角色</label><select id="role"><option>父母</option><option>教授</option><option>主管</option><option>朋友</option><option>伴侶</option><option>其他</option></select></div></div></div>
+<div id="questions"></div>
+<div class="card"><div class="qtitle">Q10｜我具體想從他身上學什麼？</div><div class="desc">不要寫「全部」，盡量寫成一項可以觀察、練習或模仿的方法。</div><textarea id="learn" placeholder="例如：我想學他把模糊問題拆成研究問題的能力。"></textarea></div>
+<div class="card"><label>我不想複製什麼？</label><textarea id="avoid" placeholder="例如：長期過勞、羞辱式溝通、把加班視為理所當然。"></textarea><label style="margin-top:12px">觀察證據／事件</label><textarea id="evidence" placeholder="記錄具體事件，不只寫印象。"></textarea></div>
+<div class="card"><div id="resultBox" class="result mid"><span class="badge">目前平均</span><strong id="avg">—</strong><div id="resultText">完成 Q1–Q9 後會自動判斷</div></div><label>最後判斷</label><select id="finalDecision"><option>資訊不足／持續觀察</option><option>值得學</option><option>部分學習</option><option>可以理解但不必學</option><option>明確不要學</option></select><div class="actions" style="margin-top:12px"><button class="primary" onclick="saveCurrent()">儲存這個人</button><button class="secondary" onclick="resetForm()">清空重填</button></div></div>
+</section>
+<section id="tab-three" class="hidden"><div class="card"><h2 class="sectionTitle">三區分析</h2><div class="tip">把一個人拆開看：不全盤崇拜，也不因一個缺點全盤否定。</div></div><div class="card"><label>姓名／代稱</label><input id="triName" placeholder="例如：某主管"><div class="pillTitle">值得學</div><textarea id="triGood" placeholder="我希望內化到自己身上的部分"></textarea><div class="pillTitle">可以理解但不必學</div><textarea id="triNeutral" placeholder="適合他，不一定適合我"></textarea><div class="pillTitle">明確不要學</div><textarea id="triBad" placeholder="即使成功，我也不願付出這個代價"></textarea><div class="pillTitle">我自己的下一步</div><textarea id="triNext" placeholder="例如：學研究方法，不複製他的工作與待人方式。"></textarea><button class="primary" style="width:100%;margin-top:12px" onclick="saveThree()">儲存三區分析</button></div><div class="card"><h3 class="sectionTitle">已儲存</h3><div id="threeList"></div></div></section>
+<section id="tab-saved" class="hidden"><div class="card"><h2 class="sectionTitle">已儲存人物</h2><div class="tip">資料只保存在這台裝置的瀏覽器中，不會自動上傳到 GitHub。</div></div><div class="card"><div id="savedList"></div></div></section>
+</main>
+<nav><div class="inner"><button id="nav-check" class="active" onclick="showTab('check')">檢核</button><button id="nav-three" onclick="showTab('three')">三區分析</button><button id="nav-saved" onclick="showTab('saved')">已儲存</button></div></nav>
+<script>
+const qs=[
+{t:'Q1｜他有沒有我真正認同的價值觀？',d:'不是看他說什麼，而是看他遇到利益衝突時怎麼選。',e:'例如：面對數據造假、規避規定或佔便宜時，是否仍維持原則？'},
+{t:'Q2｜他在有壓力時，還能不能維持基本原則？',d:'壓力下的反應，比平常更能看出一個人。',e:'例如：出事或趕時間時，是先確認事實與處理問題，還是辱罵、推責、找人背鍋？'},
+{t:'Q3｜他有沒有真正做出成果？',d:'成果不一定是錢或名氣，也可以是長期穩定、專業能力、家庭經營或學生培養。',e:'例如：教授長期帶出好的學生；父母長期把家庭與財務照顧穩定。'},
+{t:'Q4｜他的成果背後，有沒有一套我可以學的方法？',d:'如果只能歸因於背景、人脈或運氣，就比較難直接當作學習模板。',e:'例如：他能清楚說明自己如何拆問題、準備、複習、改善。'},
+{t:'Q5｜他怎麼對待比自己權力小的人？',d:'不需要討好對方時，通常更能看出真實品格。',e:'例如：如何對待學生、部屬、服務人員、家人或陌生人。'},
+{t:'Q6｜他犯錯時會怎麼處理？',d:'看他是推責、掩飾，還是承認、修正、補救、改流程。',e:'真正值得學的不是「從不犯錯」，而是犯錯後是否承擔與改善。'},
+{t:'Q7｜他成功的代價，是我願意接受的嗎？',d:'他的成功方式是不是你願意承受的生活。',e:'例如：是否長期犧牲健康、家庭、關係、睡眠或倫理。'},
+{t:'Q8｜他會不會尊重別人的界線和選擇？',d:'可以提出意見，但不應控制別人的人生。',e:'例如：不同意你時，是否仍尊重你的選擇、隱私與時間。'},
+{t:'Q9｜如果沒有人知道，他還會做一樣的選擇嗎？',d:'這是在看內在標準，而不是形象管理。',e:'例如：沒人檢查時，是否仍誠實報帳、遵守規範與約定。'}];
+let scores=Array(9).fill(null);
+function renderQuestions(){const w=document.getElementById('questions');w.innerHTML='';qs.forEach((q,i)=>{const d=document.createElement('div');d.className='card';d.innerHTML=`<div class="qtitle">${q.t}</div><div class="desc">${q.d}</div><div class="example">${q.e}</div><div class="score" id="score-${i}">${[1,2,3,4,5].map(v=>`<button onclick="setScore(${i},${v})">${v}</button>`).join('')}</div><div class="scoreHint"><span>1 非常不符合</span><span>3 普通／資訊不足</span><span>5 非常符合</span></div>`;w.appendChild(d)})}
+function setScore(i,v){scores[i]=v;document.querySelectorAll(`#score-${i} button`).forEach((b,j)=>b.classList.toggle('active',j===v-1));updateResult()}
+function updateResult(){const vals=scores.filter(v=>v!==null);if(!vals.length){avg.textContent='—';return}const a=vals.reduce((x,y)=>x+y,0)/vals.length;avg.textContent=a.toFixed(2);resultBox.className='result ';if(a>=4){resultBox.classList.add('good');resultText.textContent='值得深入學習，但仍保留獨立判斷'}else if(a>=3){resultBox.classList.add('mid');resultText.textContent='部分學習：拆開看哪些值得學、哪些不必複製'}else{resultBox.classList.add('low');resultText.textContent='保留／明確不要學：先辨認是否為重複模式'}}
+function saveCurrent(){const vals=scores.filter(v=>v!==null);const item={id:Date.now(),name:personName.value.trim()||'未命名人物',role:role.value,scores:[...scores],avg:vals.length?+(vals.reduce((x,y)=>x+y,0)/vals.length).toFixed(2):null,learn:learn.value,avoid:avoid.value,evidence:evidence.value,decision:finalDecision.value,date:new Date().toLocaleString('zh-TW')};const arr=JSON.parse(localStorage.getItem('roleModelRecords')||'[]');arr.unshift(item);localStorage.setItem('roleModelRecords',JSON.stringify(arr));renderSaved();alert('已儲存')}
+function resetForm(){scores=Array(9).fill(null);personName.value='';learn.value='';avoid.value='';evidence.value='';finalDecision.value='資訊不足／持續觀察';renderQuestions();updateResult()}
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function renderSaved(){const arr=JSON.parse(localStorage.getItem('roleModelRecords')||'[]');savedList.innerHTML=arr.length?arr.map(x=>`<div class="savedItem"><div><div><strong>${esc(x.name)}</strong> <span class="badge">${esc(x.role)}</span></div><div class="savedMeta">平均：${x.avg??'—'}｜${esc(x.decision)}｜${esc(x.date)}</div>${x.learn?`<div class="savedMeta">想學：${esc(x.learn)}</div>`:''}</div><button class="tinyBtn" onclick="deleteSaved(${x.id})">刪除</button></div>`).join(''):'<div class="tip">尚未儲存任何人物。</div>'}
+function deleteSaved(id){if(!confirm('確定刪除？'))return;localStorage.setItem('roleModelRecords',JSON.stringify(JSON.parse(localStorage.getItem('roleModelRecords')||'[]').filter(x=>x.id!==id)));renderSaved()}
+function saveThree(){const item={id:Date.now(),name:triName.value.trim()||'未命名人物',good:triGood.value,neutral:triNeutral.value,bad:triBad.value,next:triNext.value,date:new Date().toLocaleString('zh-TW')};const arr=JSON.parse(localStorage.getItem('threeZoneRecords')||'[]');arr.unshift(item);localStorage.setItem('threeZoneRecords',JSON.stringify(arr));renderThree();alert('已儲存')}
+function renderThree(){const arr=JSON.parse(localStorage.getItem('threeZoneRecords')||'[]');threeList.innerHTML=arr.length?arr.map(x=>`<div class="savedItem"><div><strong>${esc(x.name)}</strong><div class="savedMeta">值得學：${esc(x.good||'—')}</div><div class="savedMeta">可理解：${esc(x.neutral||'—')}</div><div class="savedMeta">不要學：${esc(x.bad||'—')}</div><div class="savedMeta">下一步：${esc(x.next||'—')}</div></div><button class="tinyBtn" onclick="deleteThree(${x.id})">刪除</button></div>`).join(''):'<div class="tip">尚未儲存任何三區分析。</div>'}
+function deleteThree(id){if(!confirm('確定刪除？'))return;localStorage.setItem('threeZoneRecords',JSON.stringify(JSON.parse(localStorage.getItem('threeZoneRecords')||'[]').filter(x=>x.id!==id)));renderThree()}
+function showTab(t){['check','three','saved'].forEach(x=>{document.getElementById('tab-'+x).classList.toggle('hidden',x!==t);document.getElementById('nav-'+x).classList.toggle('active',x===t)});if(t==='saved')renderSaved();if(t==='three')renderThree()}
+renderQuestions();renderSaved();renderThree();if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+</script>
+</body>
+</html>
